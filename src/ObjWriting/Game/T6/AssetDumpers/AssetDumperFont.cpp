@@ -17,12 +17,12 @@ bool AssetDumperFont::ShouldDump(XAssetInfo<Font_s>* asset)
 
 void AssetDumperFont::DumpAsset(AssetDumpingContext& context, XAssetInfo<Font_s>* asset)
 {
-    const auto* gfxLightDef = asset->Asset();
+    const auto* fontDef = asset->Asset();
     const auto assetFile = context.OpenAssetFile(GetFileNameForAsset(asset->m_name));
 
     if (!assetFile)
         return;
 
     auto& stream = *assetFile;
-    stream.write(gfxLightDef->fontName, gfxLightDef->pixelHeight);
+    stream.write(fontDef->fontName, fontDef->pixelHeight);
 }
