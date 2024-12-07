@@ -8,7 +8,8 @@
 
 using namespace T6;
 
-const char* GameAssetPoolT6::ASSET_TYPE_NAMES[]{
+const char* GameAssetPoolT6::ASSET_TYPE_NAMES[]
+{
     "xmodelpieces",
     "physpreset",
     "physconstraints",

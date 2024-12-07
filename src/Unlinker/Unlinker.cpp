@@ -159,7 +159,7 @@ private:
     {
         auto zoneDefinitionFilePath(zoneDefinitionFileFolder);
         zoneDefinitionFilePath.append(zone.m_name);
-        zoneDefinitionFilePath.replace_extension(".zone");
+        zoneDefinitionFilePath.replace_extension(".csv");
 
         std::ofstream zoneDefinitionFile(zoneDefinitionFilePath, std::fstream::out | std::fstream::binary);
         if (!zoneDefinitionFile.is_open())
