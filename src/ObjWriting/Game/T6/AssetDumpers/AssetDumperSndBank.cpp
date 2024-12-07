@@ -22,7 +22,8 @@ namespace fs = std::filesystem;
 
 namespace
 {
-    const std::string ALIAS_HEADERS[]{
+    const std::string ALIAS_HEADERS[]
+    {
         "Name",
         "FileSource",
         "Secondary",
@@ -85,7 +86,8 @@ namespace
         "NeverPlayTwice",
     };
 
-    const std::string REVERB_HEADERS[]{
+    const std::string REVERB_HEADERS[]
+    {
         "name",
         "smoothing",
         "earlyTime",
@@ -105,12 +107,14 @@ namespace
         "returnHighpass",
     };
 
-    const std::string PREFIXES_TO_DROP[]{
+    const std::string PREFIXES_TO_DROP[]
+    {
         "raw/",
         "devraw/",
     };
 
-    constexpr size_t FRAME_RATE_FOR_INDEX[]{
+    constexpr size_t FRAME_RATE_FOR_INDEX[]
+    {
         8000,
         12000,
         16000,
@@ -122,7 +126,8 @@ namespace
         192000,
     };
 
-    constexpr const char* KNOWN_CONTEXT_TYPES[]{
+    constexpr const char* KNOWN_CONTEXT_TYPES[]
+    {
         "",
         "plr_stance",
         "grass",
@@ -131,7 +136,8 @@ namespace
         "mature",
     };
 
-    constexpr const char* KNOWN_CONTEXT_VALUES[]{
+    constexpr const char* KNOWN_CONTEXT_VALUES[]
+    {
         "",
         "stand",
         "crouch",
@@ -146,7 +152,8 @@ namespace
         "explicit",
     };
 
-    constexpr const char* KNOWN_FUTZ_IDS[]{
+    constexpr const char* KNOWN_FUTZ_IDS[]
+    {
         "",
         "bfutz",
         "default",

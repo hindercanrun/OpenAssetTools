@@ -19,5 +19,5 @@ void AssetDumperComWorld::DumpAsset(AssetDumpingContext& context, XAssetInfo<Com
         return;
 
     auto& stream = *assetFile;
-    stream.write(comWorld->name, comWorld->primaryLights->type);
+    stream.write(comWorld->name, comWorld->primaryLights->exponent);
 }
