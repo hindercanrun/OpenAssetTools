@@ -24,7 +24,8 @@ namespace
         }
     };
 
-    const KeyValuePairKnownKey KEY_VALUE_PAIR_KNOWN_KEYS[]{
+    const KeyValuePairKnownKey KEY_VALUE_PAIR_KNOWN_KEYS[]
+    {
         KeyValuePairKnownKey("ipak_read"),
         KeyValuePairKnownKey("ipak_write"),
         KeyValuePairKnownKey("initial_xmodels"),
@@ -50,10 +51,10 @@ namespace
 
 void ZoneDefWriter::WriteMetaData(ZoneDefinitionOutputStream& stream, const UnlinkerArgs& args, const Zone& zone) const
 {
-    const auto* assetPoolT6 = dynamic_cast<GameAssetPoolT6*>(zone.m_pools.get());
-    if (assetPoolT6 && !assetPoolT6->m_key_value_pairs->m_asset_lookup.empty())
+    const auto* assetPool = dynamic_cast<GameAssetPoolT6*>(zone.m_pools.get());
+    if (assetPool && !assetPool->m_key_value_pairs->m_asset_lookup.empty())
     {
-        for (const auto* kvpAsset : *assetPoolT6->m_key_value_pairs)
+        for (const auto* kvpAsset : *assetPool->m_key_value_pairs)
         {
             const auto* keyValuePairs = kvpAsset->Asset();
             for (auto varIndex = 0; varIndex < keyValuePairs->numVariables; varIndex++)
@@ -81,7 +82,6 @@ void ZoneDefWriter::WriteContent(ZoneDefinitionOutputStream& stream, const Unlin
         switch (asset->m_type)
         {
         case ASSET_TYPE_LOCALIZE_ENTRY:
-        case ASSET_TYPE_KEYVALUEPAIRS: // KeyValuePairs should be included as zone file metadata and not as content
             break;
 
         default:

@@ -88,7 +88,7 @@ const CommandLineOption* const OPTION_MODEL_FORMAT =
 const CommandLineOption* const OPTION_SKIP_OBJ =
     CommandLineOption::Builder::Create()
     .WithLongName("skip-obj")
-    .WithDescription("Skips loading raw obj data.")
+    .WithDescription("Skips loading raw OBJ data.")
     .Build();
 
 const CommandLineOption* const OPTION_GDT =

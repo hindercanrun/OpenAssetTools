@@ -68,7 +68,7 @@ const CommandLineOption* const OPTION_ASSET_SEARCH_PATH =
 const CommandLineOption* const OPTION_GDT_SEARCH_PATH =
     CommandLineOption::Builder::Create()
     .WithLongName("gdt-search-path")
-    .WithDescription("Specifies the search paths used for gdt files. Defaults to \"" + std::string(LinkerArgs::DEFAULT_GDT_SEARCH_PATH) + "\".")
+    .WithDescription("Specifies the search paths used for GDT files. Defaults to \"" + std::string(LinkerArgs::DEFAULT_GDT_SEARCH_PATH) + "\".")
     .WithParameter("gdtSearchPathString")
     .Build();
 

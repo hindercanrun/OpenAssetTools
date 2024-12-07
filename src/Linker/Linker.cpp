@@ -197,7 +197,7 @@ class LinkerImpl final : public Linker
             const auto gdtFile = gdtSearchPath->Open(std::format("{}.gdt", gdtName));
             if (!gdtFile.IsOpen())
             {
-                std::cerr << std::format("Failed to open file for gdt \"{}\"\n", gdtName);
+                std::cerr << std::format("Failed to open file for GDT \"{}\"\n", gdtName);
                 return false;
             }
 
@@ -205,7 +205,7 @@ class LinkerImpl final : public Linker
             auto gdt = std::make_unique<Gdt>();
             if (!gdtReader.Read(*gdt))
             {
-                std::cerr << std::format("Failed to read gdt file \"{}\"\n", gdtName);
+                std::cerr << std::format("Failed to read GDT file \"{}\"\n", gdtName);
                 return false;
             }
 
@@ -303,12 +303,12 @@ class LinkerImpl final : public Linker
 
         if (!ipakWriter->Write())
         {
-            std::cerr << "Writing ipak failed.\n";
+            std::cerr << "Writing IPak failed.\n";
             stream.close();
             return false;
         }
 
-        std::cout << std::format("Created ipak \"{}\"\n", ipakFilePath.string());
+        std::cout << std::format("Created IPak \"{}\"\n", ipakFilePath.string());
 
         stream.close();
         return true;
