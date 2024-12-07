@@ -93,14 +93,14 @@ namespace
     {
 #define XBLOCK_DEF(name, type) std::make_unique<XBlock>(STR(name), name, type)
 
-        zoneLoader.AddXBlock(XBLOCK_DEF(T6::XFILE_BLOCK_TEMP, XBlock::Type::BLOCK_TYPE_TEMP));
-        zoneLoader.AddXBlock(XBLOCK_DEF(T6::XFILE_BLOCK_RUNTIME_VIRTUAL, XBlock::Type::BLOCK_TYPE_RUNTIME));
-        zoneLoader.AddXBlock(XBLOCK_DEF(T6::XFILE_BLOCK_RUNTIME_PHYSICAL, XBlock::Type::BLOCK_TYPE_RUNTIME));
-        zoneLoader.AddXBlock(XBLOCK_DEF(T6::XFILE_BLOCK_DELAY_VIRTUAL, XBlock::Type::BLOCK_TYPE_DELAY));
-        zoneLoader.AddXBlock(XBLOCK_DEF(T6::XFILE_BLOCK_DELAY_PHYSICAL, XBlock::Type::BLOCK_TYPE_DELAY));
-        zoneLoader.AddXBlock(XBLOCK_DEF(T6::XFILE_BLOCK_VIRTUAL, XBlock::Type::BLOCK_TYPE_NORMAL));
-        zoneLoader.AddXBlock(XBLOCK_DEF(T6::XFILE_BLOCK_PHYSICAL, XBlock::Type::BLOCK_TYPE_NORMAL));
-        zoneLoader.AddXBlock(XBLOCK_DEF(T6::XFILE_BLOCK_STREAMER_RESERVE, XBlock::Type::BLOCK_TYPE_NORMAL));
+        zoneLoader.AddXBlock(XBLOCK_DEF(XFILE_BLOCK_TEMP, XBlock::Type::BLOCK_TYPE_TEMP));
+        zoneLoader.AddXBlock(XBLOCK_DEF(XFILE_BLOCK_RUNTIME_VIRTUAL, XBlock::Type::BLOCK_TYPE_RUNTIME));
+        zoneLoader.AddXBlock(XBLOCK_DEF(XFILE_BLOCK_RUNTIME_PHYSICAL, XBlock::Type::BLOCK_TYPE_RUNTIME));
+        zoneLoader.AddXBlock(XBLOCK_DEF(XFILE_BLOCK_DELAY_VIRTUAL, XBlock::Type::BLOCK_TYPE_DELAY));
+        zoneLoader.AddXBlock(XBLOCK_DEF(XFILE_BLOCK_DELAY_PHYSICAL, XBlock::Type::BLOCK_TYPE_DELAY));
+        zoneLoader.AddXBlock(XBLOCK_DEF(XFILE_BLOCK_VIRTUAL, XBlock::Type::BLOCK_TYPE_NORMAL));
+        zoneLoader.AddXBlock(XBLOCK_DEF(XFILE_BLOCK_PHYSICAL, XBlock::Type::BLOCK_TYPE_NORMAL));
+        zoneLoader.AddXBlock(XBLOCK_DEF(XFILE_BLOCK_STREAMER_RESERVE, XBlock::Type::BLOCK_TYPE_NORMAL));
 
 #undef XBLOCK_DEF
     }
@@ -159,7 +159,7 @@ namespace
             xChunkProcessor->AddChunkProcessor(std::move(chunkProcessorSalsa20));
         }
 
-        // Decompress the chunks using zlib
+        // Decompress the chunks using zLib
         xChunkProcessor->AddChunkProcessor(std::make_unique<XChunkProcessorInflate>());
         zoneLoader.AddLoadingStep(std::make_unique<StepAddProcessor>(std::move(xChunkProcessor)));
 
