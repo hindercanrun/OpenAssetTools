@@ -1,6 +1,7 @@
 #include "ObjWriterT6.h"
 
 #include "AssetDumpers/AssetDumperAddonMapEnts.h"
+#include "AssetDumpers/AssetDumperFont.h"
 #include "AssetDumpers/AssetDumperFontIcon.h"
 #include "AssetDumpers/AssetDumperGameWorldSp.h"
 #include "AssetDumpers/AssetDumperGfxImage.h"
@@ -60,7 +61,7 @@ bool ObjWriter::DumpZone(AssetDumpingContext& context) const
     DUMP_ASSET_POOL(AssetDumperMapEnts, m_map_ents, ASSET_TYPE_MAP_ENTS)
     // DUMP_ASSET_POOL(AssetDumperGfxWorld, m_gfx_world, ASSET_TYPE_GFXWORLD)
     DUMP_ASSET_POOL(AssetDumperGfxLightDef, m_gfx_light_def, ASSET_TYPE_LIGHT_DEF)
-    // DUMP_ASSET_POOL(AssetDumperFont, m_font, ASSET_TYPE_FONT)
+    DUMP_ASSET_POOL(AssetDumperFont, m_font, ASSET_TYPE_FONT)
     DUMP_ASSET_POOL(AssetDumperFontIcon, m_font_icon, ASSET_TYPE_FONTICON)
     // DUMP_ASSET_POOL(AssetDumperMenuList, m_menu_list, ASSET_TYPE_MENULIST)
     // DUMP_ASSET_POOL(AssetDumperMenuDef, m_menu_def, ASSET_TYPE_MENU)
