@@ -25,7 +25,8 @@ void AssetDumperLocalizeEntry::DumpPool(AssetDumpingContext& context, AssetPool<
         stringFileDumper.SetLanguageName(language);
 
         // Magic string. Original string files do have this config file. The purpose of the config file is unknown though.
-        stringFileDumper.SetConfigFile(R"(C:/projects/cod/t6/bin/StringEd.cfg)");
+        // hindercanrun (7/12/2024): StringEd.cfg was used by IW's Localized String editor; StringEd. - ^
+        stringFileDumper.SetConfigFile(R"(D:/t6/main/game/bin/StringEd.cfg)");
 
         stringFileDumper.SetNotes("");
 

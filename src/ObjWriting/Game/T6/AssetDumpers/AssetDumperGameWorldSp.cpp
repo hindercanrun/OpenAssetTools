@@ -19,5 +19,5 @@ void AssetDumperGameWorldSp::DumpAsset(AssetDumpingContext& context, XAssetInfo<
         return;
 
     auto& stream = *assetFile;
-    stream.write(gameWorldSp->name, /*std::max(gameWorldSp->path - 1,*/ 0);
+    stream.write(gameWorldSp->name, gameWorldSp->path.nodeCount);
 }
