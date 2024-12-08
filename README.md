@@ -1,13 +1,13 @@
 ![OpenAssetTools Logo](repo/logo_64_64.png) OpenAssetTools
 ============
 
-OpenAssetTools (OAT) is a work in progress project aiming to create a modding tools suite for older Call Of Duty titles.
+OpenAssetTools (OAT) is a work in progress project aiming to create a modding tools suite for older Call of Duty titles.
 It is not a reimplementation of existing modding tools or related to them but aims to be as compatible as possible in terms of formats and add support for previously unsupported titles.
 
 In its current form, it is still incomplete and only offers a small subset of modding features.
 It currently offers support for the PC versions of:
 
-- [IW3 (COD4: Modern Warfare - 2007)](https://en.wikipedia.org/wiki/Call_of_Duty_4:_Modern_Warfare)
+- [IW3 (Modern Warfare - 2007)](https://en.wikipedia.org/wiki/Call_of_Duty_4:_Modern_Warfare)
 - [IW4 (Modern Warfare 2 - 2009)](https://en.wikipedia.org/wiki/Call_of_Duty:_Modern_Warfare_2)
 - [IW5 (Modern Warfare 3 - 2011)](https://en.wikipedia.org/wiki/Call_of_Duty:_Modern_Warfare_3)
 - [T5 (Black Ops - 2010)](https://en.wikipedia.org/wiki/Call_of_Duty:_Black_Ops)
@@ -21,20 +21,20 @@ While still incomplete these are the features that are currently available:
 
 ### Tools
 
-The **Unlinker** tool allows loading any fastfile (.ff) of supported games and works standalone.
+The **Unlinker** tool allows loading any Fast File (.ff) of supported games and works standalone.
 While being able to load any asset it can currently only dump [a subset of these assets](docs/SupportedAssetTypes.md) to disk, depending on the game.
 The formats of the dumped assets are either as close as possible to the originally used formats for these games or a commonly used format.
 
-The **Linker** tool allows building custom fastfiles (.ff) for the supported games.
-It can also load existing zones and reuse their assets from in-memory.
+The **Linker** tool allows building custom Fast Files (.ff) for the supported games.
+It can also load existing zones and re-use their assets from in-memory.
 Only [a subset of asset types](docs/SupportedAssetTypes.md) can be read from disk depending on the game.
 
 Additionally, there are a couple of libraries and tools.
-A full list of the subcomponents can be found [here](https://openassettools.dev/guide/components.html). 
+A full list of the sub-components can be found [here](https://openassettools.dev/guide/components.html). 
 
 ## Using the tools
 
-Either download [the latest release from Github](https://github.com/Laupetin/OpenAssetTools/releases/latest) or [build OAT yourself](#building-oat).
+Either download [the latest release from GitHub](https://github.com/hindercanrun/OpenAssetTools/releases/latest) or [build OAT yourself](#building-oat).
 Building the tools yourself is only recommended if you want to do some changes to the code.
 Otherwise, you are probably better off just using the latest release.
 
@@ -54,12 +54,12 @@ Do not download as a zip from Github because it will not be a git repository whi
 Building OAT requires Git to be installed on your machine and to be in your PATH.
 This project uses Premake to generate project files depending on your platform.
 
-Note: The first time setting up will clone any submodules with git so the first initialization might take a bit.
+Note: The first time setting up will clone any submodules with Git so the first initialization might take a bit.
 
 ## Documentation & Examples
 
 The documentation can be found on the [OpenAssetTools.dev page](https://openassettools.dev).
-It is hosted on Github Pages and its source can be found in the [OAT Docs Repository](https://github.com/OpenAssetTools/Docs).
+It is hosted on GitHub Pages and its source can be found in the [OAT Docs Repository](https://github.com/OpenAssetTools/Docs).
 
 For examples of mods that can be built with OAT, you can either look into the [docs folder](docs/example) for some (currently very barebones) examples
 or check out one of the following projects that are using OAT:
