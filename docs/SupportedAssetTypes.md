@@ -182,8 +182,8 @@ The following section specify which assets are supported to be dumped to disk (u
 | GfxLightDef            | ✅              | ❌              |                                                                                                                                                                |
 | Font_s                 | ⁉️              | ❌              |                                                                                                                                                                |
 | FontIcon               | ✅              | ✅              |                                                                                                                                                                |
-| MenuList               | ⁉️              | ❌              |                                                                                                                                                                |
-| menuDef_t              | ⁉️              | ❌              |                                                                                                                                                                |
+| MenuList               | ⁉️              | ❌              | Output is name only for now. Most menus are redundant anyways.  |
+| menuDef_t              | ⁉️              | ❌              | See menulist.                                                            |
 | LocalizeEntry          | ✅              | ✅              |                                                                                                                                                                |
 | WeaponVariantDef       | ✅              | ✅              |                                                                                                                                                                |
 | WeaponAttachment       | ✅              | ✅              |                                                                                                                                                                |
