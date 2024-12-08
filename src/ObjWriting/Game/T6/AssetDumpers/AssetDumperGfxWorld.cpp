@@ -1,4 +1,3 @@
-#define NOMINMAX
 #include "AssetDumperGfxWorld.h"
 
 #include <algorithm>
@@ -13,7 +12,7 @@ bool AssetDumperGfxWorld::ShouldDump(XAssetInfo<GfxWorld>* asset)
 void AssetDumperGfxWorld::DumpAsset(AssetDumpingContext& context, XAssetInfo<GfxWorld>* asset)
 {
     const auto* gfxWorld = asset->Asset();
-    const auto assetFile = context.OpenAssetFile(asset->m_name + ".gfxworld");
+    const auto assetFile = context.OpenAssetFile(asset->m_name + "_gfxworld.json");
 
     if (!assetFile)
         return;

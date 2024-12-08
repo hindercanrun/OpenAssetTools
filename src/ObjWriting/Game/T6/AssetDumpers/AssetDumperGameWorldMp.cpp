@@ -1,4 +1,3 @@
-#define NOMINMAX
 #include "AssetDumperGameWorldMp.h"
 
 #include <algorithm>
@@ -13,7 +12,7 @@ bool AssetDumperGameWorldMp::ShouldDump(XAssetInfo<GameWorldMp>* asset)
 void AssetDumperGameWorldMp::DumpAsset(AssetDumpingContext& context, XAssetInfo<GameWorldMp>* asset)
 {
     const auto* gameWorldMp = asset->Asset();
-    const auto assetFile = context.OpenAssetFile(asset->m_name + ".gameworldmp");
+    const auto assetFile = context.OpenAssetFile(asset->m_name + "_gameworldmp.json");
 
     if (!assetFile)
         return;

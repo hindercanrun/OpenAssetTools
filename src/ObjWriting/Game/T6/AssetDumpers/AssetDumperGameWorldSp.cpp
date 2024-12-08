@@ -12,7 +12,7 @@ bool AssetDumperGameWorldSp::ShouldDump(XAssetInfo<GameWorldSp>* asset)
 void AssetDumperGameWorldSp::DumpAsset(AssetDumpingContext& context, XAssetInfo<GameWorldSp>* asset)
 {
     const auto* gameWorldSp = asset->Asset();
-    const auto assetFile = context.OpenAssetFile(asset->m_name + ".gameworldsp.json");
+    const auto assetFile = context.OpenAssetFile(asset->m_name + "_gameworldsp.json");
 
     if (!assetFile)
         return;
