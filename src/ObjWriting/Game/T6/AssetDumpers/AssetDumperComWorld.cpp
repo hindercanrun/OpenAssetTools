@@ -1,4 +1,3 @@
-#define NOMINMAX
 #include "AssetDumperComWorld.h"
 
 #include <algorithm>
@@ -13,11 +12,11 @@ bool AssetDumperComWorld::ShouldDump(XAssetInfo<ComWorld>* asset)
 void AssetDumperComWorld::DumpAsset(AssetDumpingContext& context, XAssetInfo<ComWorld>* asset)
 {
     const auto* comWorld = asset->Asset();
-    const auto assetFile = context.OpenAssetFile(asset->m_name + ".comworld");
+    const auto assetFile = context.OpenAssetFile(asset->m_name + "_comworld.json");
 
     if (!assetFile)
         return;
 
     auto& stream = *assetFile;
-    stream.write(comWorld->name, comWorld->primaryLights->exponent);
+    stream.write(comWorld->name, comWorld->primaryLightCount);
 }
