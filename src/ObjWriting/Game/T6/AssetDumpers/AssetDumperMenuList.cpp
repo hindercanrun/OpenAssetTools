@@ -1,6 +1,11 @@
 #include "AssetDumperMenuList.h"
 
-#include <algorithm>
+#include <cassert>
+#include <filesystem>
+#include <set>
+#include <sstream>
+
+namespace fs = std::filesystem;
 
 using namespace T6;
 

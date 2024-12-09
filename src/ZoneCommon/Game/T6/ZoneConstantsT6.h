@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Game/T6/T6.h"
 #include "Zone/ZoneTypes.h"
 
@@ -34,6 +35,7 @@ namespace T6
         static constexpr size_t FILE_SUFFIX_ZERO_ALIGN = 0x40;
 
         static constexpr const char* MAGIC_AUTH_HEADER = "PHEEBs71";
+
         inline static const uint8_t SALSA20_KEY_TREYARCH[]
         {
             0x64, 0x1D, 0x8A, 0x2F, 0xE3, 0x1D, 0x3A, 0xA6, 0x36, 0x22, 0xBB, 0xC9, 0xCE, 0x85, 0x87, 0x22,

@@ -1,6 +1,7 @@
 #include "AssetDumperMenuDef.h"
 
-#include <algorithm>
+#include <filesystem>
+#include <string>
 
 using namespace T6;
 
