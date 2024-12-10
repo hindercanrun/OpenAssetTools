@@ -58,7 +58,7 @@ private:
     /**
      * \brief Loads a search path.
      * \param searchPath The search path to load.
-     */
+    **/
     void LoadSearchPath(ISearchPath& searchPath) const
     {
         if (ShouldLoadObj())
@@ -73,7 +73,7 @@ private:
     /**
      * \brief Unloads a search path.
      * \param searchPath The search path to unload.
-     */
+    **/
     void UnloadSearchPath(ISearchPath& searchPath) const
     {
         if (ShouldLoadObj())
@@ -89,7 +89,7 @@ private:
      * \brief Loads all search paths that are valid for the specified zone and returns them.
      * \param zonePath The path to the zone file that should be prepared for.
      * \return A \c SearchPaths object that contains all search paths that should be considered when loading the specified zone.
-     */
+    **/
     SearchPaths GetSearchPathsForZone(const std::string& zonePath)
     {
         SearchPaths searchPathsForZone;
@@ -122,7 +122,7 @@ private:
     /**
      * \brief Initializes the Unlinker object's search paths based on the user's input.
      * \return \c true if building the search paths was successful, otherwise \c false.
-     */
+    **/
     bool BuildSearchPaths()
     {
         for (const auto& path : m_args.m_user_search_paths)
@@ -252,7 +252,7 @@ private:
      * \param searchPath The search path for obj data.
      * \param zone The zone to handle.
      * \return \c true if handling the zone was successful, otherwise \c false.
-     */
+    **/
     bool HandleZone(ISearchPath& searchPath, Zone& zone) const
     {
         if (m_args.m_task == UnlinkerArgs::ProcessingTask::LIST)

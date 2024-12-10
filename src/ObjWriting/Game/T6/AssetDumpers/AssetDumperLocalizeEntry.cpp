@@ -28,7 +28,7 @@ void AssetDumperLocalizeEntry::DumpPool(AssetDumpingContext& context, AssetPool<
         // hindercanrun (7/12/2024): StringEd.cfg was used by IW's Localized String editor; StringEd. - ^
         stringFileDumper.SetConfigFile(R"(D:/t6/main/game/bin/StringEd.cfg)");
 
-        stringFileDumper.SetNotes("");
+        stringFileDumper.SetNotes(""); // TODO: Find a way to get the original notes from the devs.
 
         for (auto* localizeEntry : *pool)
         {
@@ -39,6 +39,6 @@ void AssetDumperLocalizeEntry::DumpPool(AssetDumpingContext& context, AssetPool<
     }
     else
     {
-        printf("Could not create string file for dumping localized strings of zone '%s'\n", context.m_zone->m_name.c_str());
+        printf("Could not create string file for dumping localized strings of zone: '%s'\n", context.m_zone->m_name.c_str());
     }
 }

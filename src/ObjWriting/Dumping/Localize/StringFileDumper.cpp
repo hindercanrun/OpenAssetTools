@@ -31,7 +31,7 @@ void StringFileDumper::SetNotes(std::string notes)
 
 void StringFileDumper::WriteHeader()
 {
-    m_stream << "// Dumped from fastfile \"" << m_zone->m_name << "\".\n";
+    m_stream << "// Dumped from Fast File: \"" << m_zone->m_name << "\".\n";
     m_stream << "// In their original format the strings might have been separated in multiple files.\n";
     m_stream << "VERSION             \"1\"\n";
     m_stream << "CONFIG              \"" << m_config_file << "\"\n";
@@ -51,13 +51,17 @@ void StringFileDumper::WriteReference(const std::string& reference) const
         m_stream << "\"\n";
     }
     else
+    {
         m_stream << "REFERENCE           " << reference << "\n";
+    }
 }
 
 void StringFileDumper::WriteLocalizeEntry(const std::string& reference, const std::string& value)
 {
     if (!m_wrote_header)
+    {
         WriteHeader();
+    }
 
     m_stream << "\n";
     WriteReference(reference);
@@ -71,7 +75,9 @@ void StringFileDumper::WriteLocalizeEntry(const std::string& reference, const st
 void StringFileDumper::Finalize()
 {
     if (!m_wrote_header)
+    {
         WriteHeader();
+    }
 
     m_stream << "\nENDMARKER";
 }

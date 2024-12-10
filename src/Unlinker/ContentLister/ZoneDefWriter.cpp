@@ -35,7 +35,7 @@ void AbstractZoneDefWriter::WriteZoneDef(std::ostream& stream, const UnlinkerArg
 
     if (args.m_use_gdt)
     {
-        out.WriteComment("Load asset gdt files");
+        out.WriteComment("Load asset GDT files");
         out.WriteMetaData(META_DATA_KEY_GDT, zone.m_name);
         out.EmptyLine();
     }

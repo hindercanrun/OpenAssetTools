@@ -121,7 +121,8 @@ const CommandLineOption* const OPTION_LEGACY_MENUS =
 
 // clang-format on
 
-const CommandLineOption* const COMMAND_LINE_OPTIONS[]{
+const CommandLineOption* const COMMAND_LINE_OPTIONS[]
+{
     OPTION_HELP,
     OPTION_VERSION,
     OPTION_VERBOSE,
@@ -168,7 +169,7 @@ void UnlinkerArgs::PrintUsage() const
 
 void UnlinkerArgs::PrintVersion()
 {
-    std::cout << std::format("OpenAssetTools Unlinker {}\n", GIT_VERSION);
+    std::cout << std::format("OpenAssetTools Unlinker {}\n", GIT_VERSION);//revisions could be cool? L:
 }
 
 void UnlinkerArgs::SetVerbose(const bool isVerbose)

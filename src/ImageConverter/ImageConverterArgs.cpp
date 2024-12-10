@@ -66,7 +66,8 @@ const CommandLineOption* const OPTION_GAME_T6 =
     .Build();
 // clang-format on
 
-const CommandLineOption* const COMMAND_LINE_OPTIONS[]{
+const CommandLineOption* const COMMAND_LINE_OPTIONS[]
+{
     OPTION_HELP,
     OPTION_VERSION,
     OPTION_VERBOSE,
