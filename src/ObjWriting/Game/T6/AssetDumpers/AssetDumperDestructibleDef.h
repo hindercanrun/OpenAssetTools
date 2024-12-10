@@ -7,6 +7,8 @@ namespace T6
 {
     class AssetDumperDestructibleDef final : public AbstractAssetDumper<DestructibleDef>
     {
+        static std::string GetFileNameForAsset(const std::string& assetName);
+
     protected:
         bool ShouldDump(XAssetInfo<DestructibleDef>* asset) override;
         void DumpAsset(AssetDumpingContext& context, XAssetInfo<DestructibleDef>* asset) override;
