@@ -82,21 +82,24 @@ public:
 
         const IPakHeader header{ipak_consts::IPAK_MAGIC, ipak_consts::IPAK_VERSION, static_cast<uint32_t>(m_total_size), SECTION_COUNT};
 
-        const IPakSection dataSection{
+        const IPakSection dataSection
+        {
             ipak_consts::IPAK_DATA_SECTION,
             static_cast<uint32_t>(m_data_section_offset),
             static_cast<uint32_t>(m_data_section_size),
             static_cast<uint32_t>(m_index_entries.size()),
         };
 
-        const IPakSection indexSection{
+        const IPakSection indexSection
+        {
             ipak_consts::IPAK_INDEX_SECTION,
             static_cast<uint32_t>(m_index_section_offset),
             static_cast<uint32_t>(sizeof(IPakIndexEntry) * m_index_entries.size()),
             static_cast<uint32_t>(m_index_entries.size()),
         };
 
-        const IPakSection brandingSection{
+        const IPakSection brandingSection
+        {
             ipak_consts::IPAK_BRANDING_SECTION,
             static_cast<uint32_t>(m_branding_section_offset),
             std::extent_v<decltype(BRANDING)>,
@@ -175,7 +178,9 @@ public:
         // Skip to the next chunk when only the header could fit into the current chunk anyway
         if (static_cast<size_t>(utils::Align(m_current_offset, static_cast<int64_t>(ipak_consts::IPAK_CHUNK_SIZE)) - m_current_offset)
             <= sizeof(IPakDataBlockHeader))
+        {
             FlushChunk();
+        }
 
         m_current_block_header_offset = m_current_offset;
         m_current_block = {};
@@ -261,7 +266,9 @@ public:
         size_t imageSize;
         const auto imageData = ReadImageDataFromSearchPath(imageName, imageSize);
         if (!imageData)
+        {
             return false;
+        }
 
         const auto nameHash = T6::Common::R_HashString(imageName.c_str(), 0);
         const auto dataHash = static_cast<unsigned>(crc32(0u, reinterpret_cast<const Bytef*>(imageData.get()), imageSize));
@@ -321,7 +328,9 @@ public:
         SortIndexSectionEntries();
 
         for (const auto& indexEntry : m_index_entries)
+        {
             Write(&indexEntry, sizeof(indexEntry));
+        }
     }
 
     void WriteBrandingSection()
@@ -345,7 +354,9 @@ public:
         AlignToChunk();
 
         if (!WriteDataSection())
+        {
             return false;
+        }
 
         WriteIndexSection();
         WriteBrandingSection();
