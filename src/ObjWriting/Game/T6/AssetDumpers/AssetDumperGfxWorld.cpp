@@ -1,7 +1,5 @@
 #include "AssetDumperGfxWorld.h"
 
-#include <algorithm>
-
 using namespace T6;
 
 bool AssetDumperGfxWorld::ShouldDump(XAssetInfo<GfxWorld>* asset)

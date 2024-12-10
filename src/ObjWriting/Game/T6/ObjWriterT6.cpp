@@ -3,6 +3,7 @@
 #include "AssetDumpers/AssetDumperAddonMapEnts.h"
 #include "AssetDumpers/AssetDumperClipMap.h"
 #include "AssetDumpers/AssetDumperComWorld.h"
+#include "AssetDumpers/AssetDumperDestructibleDef.h"
 #include "AssetDumpers/AssetDumperFont.h"
 #include "AssetDumpers/AssetDumperFontIcon.h"
 #include "AssetDumpers/AssetDumperGameWorldMp.h"
@@ -53,7 +54,7 @@ bool ObjWriter::DumpZone(AssetDumpingContext& context) const
 
     DUMP_ASSET_POOL(AssetDumperPhysPreset, m_phys_preset, ASSET_TYPE_PHYSPRESET)
     DUMP_ASSET_POOL(AssetDumperPhysConstraints, m_phys_constraints, ASSET_TYPE_PHYSCONSTRAINTS)
-    // DUMP_ASSET_POOL(AssetDumperDestructibleDef, m_destructible_def, ASSET_TYPE_DESTRUCTIBLEDEF)
+    DUMP_ASSET_POOL(AssetDumperDestructibleDef, m_destructible_def, ASSET_TYPE_DESTRUCTIBLEDEF)
     // DUMP_ASSET_POOL(AssetDumperXAnimParts, m_xanim_parts, ASSET_TYPE_XANIMPARTS)
     DUMP_ASSET_POOL(AssetDumperXModel, m_xmodel, ASSET_TYPE_XMODEL)
     DUMP_ASSET_POOL(AssetDumperMaterial, m_material, ASSET_TYPE_MATERIAL)
