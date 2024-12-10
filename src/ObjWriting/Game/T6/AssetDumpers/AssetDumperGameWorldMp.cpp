@@ -1,7 +1,5 @@
 #include "AssetDumperGameWorldMp.h"
 
-#include <algorithm>
-
 using namespace T6;
 
 bool AssetDumperGameWorldMp::ShouldDump(XAssetInfo<GameWorldMp>* asset)

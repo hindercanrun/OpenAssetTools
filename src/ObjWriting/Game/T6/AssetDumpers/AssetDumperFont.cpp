@@ -1,7 +1,4 @@
-#define NOMINMAX
 #include "AssetDumperFont.h"
-
-#include <algorithm>
 
 using namespace T6;
 

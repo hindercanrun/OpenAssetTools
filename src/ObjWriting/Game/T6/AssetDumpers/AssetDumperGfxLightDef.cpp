@@ -1,7 +1,4 @@
-#define NOMINMAX
 #include "AssetDumperGfxLightDef.h"
-
-#include <algorithm>
 
 using namespace T6;
 

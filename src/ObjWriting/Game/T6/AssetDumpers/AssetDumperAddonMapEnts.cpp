@@ -1,7 +1,4 @@
-#define NOMINMAX
 #include "AssetDumperAddonMapEnts.h"
-
-#include <algorithm>
 
 using namespace T6;
 

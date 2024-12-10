@@ -1,7 +1,5 @@
 #include "AssetDumperComWorld.h"
 
-#include <algorithm>
-
 using namespace T6;
 
 bool AssetDumperComWorld::ShouldDump(XAssetInfo<ComWorld>* asset)

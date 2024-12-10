@@ -1,7 +1,5 @@
 #include "AssetDumperClipMap.h"
 
-#include <algorithm>
-
 using namespace T6;
 
 bool AssetDumperClipMap::ShouldDump(XAssetInfo<clipMap_t>* asset)

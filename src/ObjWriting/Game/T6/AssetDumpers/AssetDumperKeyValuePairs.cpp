@@ -1,7 +1,4 @@
-#define NOMINMAX
 #include "AssetDumperKeyValuePairs.h"
-
-#include <algorithm>
 
 using namespace T6;
 
