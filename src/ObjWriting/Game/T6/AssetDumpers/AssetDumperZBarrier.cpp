@@ -54,7 +54,7 @@ bool AssetDumperZBarrier::ShouldDump(XAssetInfo<ZBarrierDef>* asset)
 
 void AssetDumperZBarrier::DumpAsset(AssetDumpingContext& context, XAssetInfo<ZBarrierDef>* asset)
 {
-    // Only dump raw when no gdt available
+    // Only dump raw when no GDT available
     if (context.m_gdt)
     {
         const auto infoString = CreateInfoString(asset);

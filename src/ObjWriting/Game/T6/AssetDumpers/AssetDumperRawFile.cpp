@@ -50,7 +50,7 @@ void AssetDumperRawFile::DumpAnimtree(AssetDumpingContext& context, XAssetInfo<R
     zs.next_in = reinterpret_cast<const Bytef*>(&rawFile->buffer[4]);
     zs.avail_in = inLen - sizeof(uint32_t);
 
-    Bytef buffer[0x1000];
+    Bytef buffer[0x1000]{};
 
     while (zs.avail_in > 0)
     {

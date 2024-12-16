@@ -325,10 +325,8 @@ namespace
         {
         case SND_ASSET_FORMAT_PCMS16:
             return ".wav";
-
         case SND_ASSET_FORMAT_FLAC:
             return ".flac";
-
         default:
             assert(false);
             return "";
@@ -730,11 +728,9 @@ namespace
             case SND_ASSET_FORMAT_PCMS16:
                 DumpSoundFilePcm(context, alias.assetFileName, soundFile, 16u);
                 break;
-
             case SND_ASSET_FORMAT_FLAC:
                 DumpSoundFilePassthrough(context, alias.assetFileName, soundFile, ".flac");
                 break;
-
             case SND_ASSET_FORMAT_PCMS24:
             case SND_ASSET_FORMAT_PCMS32:
             case SND_ASSET_FORMAT_IEEE:
@@ -745,7 +741,6 @@ namespace
             case SND_ASSET_FORMAT_MPC:
                 std::cerr << std::format("Cannot dump sound (Unknown sound format {}): \"{}\"\n", static_cast<unsigned>(format), alias.assetFileName);
                 break;
-
             default:
                 assert(false);
                 std::cerr << std::format("Cannot dump sound (Unknown sound format {}): \"{}\"\n", static_cast<unsigned>(format), alias.assetFileName);
