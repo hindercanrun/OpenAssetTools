@@ -239,13 +239,13 @@ namespace T6
     void ObjLoader::LoadIPakForZone(ISearchPath& searchPath, const std::string& ipakName, Zone& zone)
     {
         if (ObjLoading::Configuration.Verbose)
-            std::cout << std::format("Trying to load ipak '{}' for zone '{}'\n", ipakName, zone.m_name);
+            std::cout << std::format("Trying to load IPak '{}' for zone '{}'\n", ipakName, zone.m_name);
 
         auto* existingIPak = IPak::Repository.GetContainerByName(ipakName);
         if (existingIPak != nullptr)
         {
             if (ObjLoading::Configuration.Verbose)
-                std::cout << std::format("Referencing loaded ipak '{}'.\n", ipakName);
+                std::cout << std::format("Referencing loaded IPak '{}'.\n", ipakName);
 
             IPak::Repository.AddContainerReference(existingIPak, &zone);
             return;
@@ -263,11 +263,11 @@ namespace T6
                 IPak::Repository.AddContainer(std::move(ipak), &zone);
 
                 if (ObjLoading::Configuration.Verbose)
-                    std::cout << std::format("Found and loaded ipak '{}'.\n", ipakFilename);
+                    std::cout << std::format("Found and loaded IPak '{}'.\n", ipakFilename);
             }
             else
             {
-                std::cerr << std::format("Failed to load ipak '{}'!\n", ipakFilename);
+                std::cerr << std::format("Failed to load IPak '{}'!\n", ipakFilename);
             }
         }
     }
@@ -285,7 +285,7 @@ namespace T6
     void ObjLoader::LoadCommonIPaks(ISearchPath& searchPath, Zone& zone)
     {
         if (ObjLoading::Configuration.Verbose)
-            std::cout << std::format("Loading common ipaks for zone \"{}\"\n", zone.m_name);
+            std::cout << std::format("Loading common IPaks for zone \"{}\"\n", zone.m_name);
 
         LoadIPakForZone(searchPath, "base", zone);
         const auto& languagePrefixes = IGame::GetGameById(GameId::T6)->GetLanguagePrefixes();
@@ -295,7 +295,7 @@ namespace T6
         if (IsMpZone(zone))
         {
             if (ObjLoading::Configuration.Verbose)
-                std::cout << std::format("Loading multiplayer ipaks for zone \"{}\"\n", zone.m_name);
+                std::cout << std::format("Loading Multiplayer IPaks for zone \"{}\"\n", zone.m_name);
 
             LoadIPakForZone(searchPath, "mp", zone);
             LoadIPakForZone(searchPath, "so", zone);
@@ -303,14 +303,14 @@ namespace T6
         else if (IsZmZone(zone))
         {
             if (ObjLoading::Configuration.Verbose)
-                std::cout << std::format("Loading zombie ipak for zone \"{}\"\n", zone.m_name);
+                std::cout << std::format("Loading Zombie IPak for zone \"{}\"\n", zone.m_name);
 
             LoadIPakForZone(searchPath, "zm", zone);
         }
         else
         {
             if (ObjLoading::Configuration.Verbose)
-                std::cout << std::format("Loading singleplayer ipak for zone \"{}\"\n", zone.m_name);
+                std::cout << std::format("Loading Singleplayer IPak for zone \"{}\"\n", zone.m_name);
 
             LoadIPakForZone(searchPath, "sp", zone);
         }
