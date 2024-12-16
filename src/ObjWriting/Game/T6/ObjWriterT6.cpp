@@ -16,6 +16,7 @@
 #include "AssetDumpers/AssetDumperLocalizeEntry.h"
 #include "AssetDumpers/AssetDumperMapEnts.h"
 #include "AssetDumpers/AssetDumperMaterial.h"
+#include "AssetDumpers/AssetDumperMemoryBlock.h"
 #include "AssetDumpers/AssetDumperMenuDef.h"
 #include "AssetDumpers/AssetDumperMenuList.h"
 #include "AssetDumpers/AssetDumperPhysConstraints.h"
@@ -91,7 +92,7 @@ bool ObjWriter::DumpZone(AssetDumpingContext& context) const
     DUMP_ASSET_POOL(AssetDumperScriptParseTree, m_script, ASSET_TYPE_SCRIPTPARSETREE)
     DUMP_ASSET_POOL(AssetDumperKeyValuePairs, m_key_value_pairs, ASSET_TYPE_KEYVALUEPAIRS)
     DUMP_ASSET_POOL(AssetDumperVehicle, m_vehicle, ASSET_TYPE_VEHICLEDEF)
-    // DUMP_ASSET_POOL(AssetDumperMemoryBlock, m_memory_block, ASSET_TYPE_MEMORYBLOCK)
+    DUMP_ASSET_POOL(AssetDumperMemoryBlock, m_memory_block, ASSET_TYPE_MEMORYBLOCK)
     DUMP_ASSET_POOL(AssetDumperAddonMapEnts, m_addon_map_ents, ASSET_TYPE_ADDON_MAP_ENTS)
     DUMP_ASSET_POOL(AssetDumperTracer, m_tracer, ASSET_TYPE_TRACER)
     // DUMP_ASSET_POOL(AssetDumperSkinnedVertsDef, m_skinned_verts, ASSET_TYPE_SKINNEDVERTS)
