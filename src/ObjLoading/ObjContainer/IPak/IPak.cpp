@@ -85,7 +85,6 @@ class IPak::Impl : public ObjContainerReferenceable
         case ipak_consts::IPAK_DATA_SECTION:
             m_data_section = std::make_unique<IPakSection>(section);
             break;
-
         default:
             break;
         }
@@ -106,13 +105,13 @@ class IPak::Impl : public ObjContainerReferenceable
 
         if (header.magic != ipak_consts::IPAK_MAGIC)
         {
-            printf("Invalid ipak magic '0x%x'.\n", header.magic);
+            printf("Invalid IPak magic '0x%x'.\n", header.magic);
             return false;
         }
 
         if (header.version != ipak_consts::IPAK_VERSION)
         {
-            printf("Unsupported ipak version '%u'.\n", header.version);
+            printf("Unsupported IPak version '%u'.\n", header.version);
             return false;
         }
 
