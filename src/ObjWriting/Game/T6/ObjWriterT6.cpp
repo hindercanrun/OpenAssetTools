@@ -6,6 +6,7 @@
 #include "AssetDumpers/AssetDumperDestructibleDef.h"
 #include "AssetDumpers/AssetDumperFont.h"
 #include "AssetDumpers/AssetDumperFontIcon.h"
+#include "AssetDumpers/AssetDumperFootstepTableDef.h"
 #include "AssetDumpers/AssetDumperGameWorldMp.h"
 #include "AssetDumpers/AssetDumperGameWorldSp.h"
 #include "AssetDumpers/AssetDumperGfxImage.h"
@@ -100,7 +101,7 @@ bool ObjWriter::DumpZone(AssetDumpingContext& context) const
     DUMP_ASSET_POOL(AssetDumperSkinnedVertsDef, m_skinned_verts, ASSET_TYPE_SKINNEDVERTS)
     DUMP_ASSET_POOL(AssetDumperQdb, m_qdb, ASSET_TYPE_QDB)
     DUMP_ASSET_POOL(AssetDumperSlug, m_slug, ASSET_TYPE_SLUG)
-    // DUMP_ASSET_POOL(AssetDumperFootstepTableDef, m_footstep_table, ASSET_TYPE_FOOTSTEP_TABLE)
+    DUMP_ASSET_POOL(AssetDumperFootstepTableDef, m_footstep_table, ASSET_TYPE_FOOTSTEP_TABLE)
     // DUMP_ASSET_POOL(AssetDumperFootstepFXTableDef, m_footstep_fx_table, ASSET_TYPE_FOOTSTEPFX_TABLE)
     DUMP_ASSET_POOL(AssetDumperZBarrier, m_zbarrier, ASSET_TYPE_ZBARRIER)
 
