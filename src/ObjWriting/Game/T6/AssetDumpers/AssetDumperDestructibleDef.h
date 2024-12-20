@@ -2,12 +2,13 @@
 
 #include "Dumping/AbstractAssetDumper.h"
 #include "Game/T6/T6.h"
+#include "InfoString/InfoString.h"
 
 namespace T6
 {
     class AssetDumperDestructibleDef final : public AbstractAssetDumper<DestructibleDef>
     {
-        static std::string GetFileNameForAsset(const std::string& assetName);
+        static InfoString CreateInfoString(XAssetInfo<DestructibleDef>* asset);
 
     protected:
         bool ShouldDump(XAssetInfo<DestructibleDef>* asset) override;
