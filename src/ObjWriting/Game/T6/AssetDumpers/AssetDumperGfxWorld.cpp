@@ -13,7 +13,10 @@ void AssetDumperGfxWorld::DumpAsset(AssetDumpingContext& context, XAssetInfo<Gfx
     const auto assetFile = context.OpenAssetFile(asset->m_name + "_gfxworld.json");
 
     if (!assetFile)
+    {
+        std::cerr << std::format("WARNING: failed to dump {}", asset->m_name);
         return;
+    }
 
     auto& stream = *assetFile;
     stream.write(gfxWorld->name, gfxWorld->materialMemoryCount);

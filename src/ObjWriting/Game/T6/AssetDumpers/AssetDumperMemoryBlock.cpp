@@ -13,7 +13,10 @@ void AssetDumperMemoryBlock::DumpAsset(AssetDumpingContext& context, XAssetInfo<
     const auto assetFile = context.OpenAssetFile(asset->m_name);
 
     if (!assetFile)
+    {
+        std::cerr << std::format("WARNING: failed to dump {}", asset->m_name);
         return;
+    }
 
     auto& stream = *assetFile;
     stream.write(memoryBlock->name, (int)memoryBlock->data.mainData);

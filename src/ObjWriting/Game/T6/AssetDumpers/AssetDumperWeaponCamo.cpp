@@ -17,7 +17,10 @@ void AssetDumperWeaponCamo::DumpAsset(AssetDumpingContext& context, XAssetInfo<W
     const auto assetFile = context.OpenAssetFile(fileName);
 
     if (!assetFile)
+    {
+        std::cerr << std::format("WARNING: failed to dump {}", asset->m_name);
         return;
+    }
 
     DumpWeaponCamoAsJson(*assetFile, asset->Asset());
 }

@@ -78,7 +78,10 @@ void AssetDumperTracer::DumpAsset(AssetDumpingContext& context, XAssetInfo<Trace
         const auto assetFile = context.OpenAssetFile("tracer/" + asset->m_name);
 
         if (!assetFile)
+        {
+            std::cerr << std::format("WARNING: failed to dump {}", asset->m_name);
             return;
+        }
 
         auto& stream = *assetFile;
         const auto infoString = CreateInfoString(asset);

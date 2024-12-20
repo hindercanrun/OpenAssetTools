@@ -79,7 +79,10 @@ void AssetDumperRawFile::DumpAsset(AssetDumpingContext& context, XAssetInfo<RawF
     const auto assetFile = context.OpenAssetFile(asset->m_name);
 
     if (!assetFile)
+    {
+        std::cerr << std::format("WARNING: failed to dump {}", asset->m_name);
         return;
+    }
 
     auto& stream = *assetFile;
     const fs::path rawFilePath(rawFile->name);

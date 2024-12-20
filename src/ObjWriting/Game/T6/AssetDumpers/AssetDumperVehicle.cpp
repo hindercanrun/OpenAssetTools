@@ -128,7 +128,10 @@ void AssetDumperVehicle::DumpAsset(AssetDumpingContext& context, XAssetInfo<Vehi
         const auto assetFile = context.OpenAssetFile("vehicles/" + asset->m_name);
 
         if (!assetFile)
+        {
+            std::cerr << std::format("WARNING: failed to dump {}", asset->m_name);
             return;
+        }
 
         auto& stream = *assetFile;
         const auto infoString = CreateInfoString(asset);

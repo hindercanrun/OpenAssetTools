@@ -99,7 +99,10 @@ void AssetDumperPhysPreset::DumpAsset(AssetDumpingContext& context, XAssetInfo<P
         const auto assetFile = context.OpenAssetFile("physic/" + asset->m_name);
 
         if (!assetFile)
+        {
+            std::cerr << std::format("WARNING: failed to dump {}", asset->m_name);
             return;
+        }
 
         auto& stream = *assetFile;
         const auto infoString = CreateInfoString(asset);
