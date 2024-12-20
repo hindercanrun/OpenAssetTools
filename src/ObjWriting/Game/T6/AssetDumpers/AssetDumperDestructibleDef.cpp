@@ -19,15 +19,7 @@ namespace T6
     protected:
         void FillFromExtensionField(const cspField_t& field) override
         {
-            switch (static_cast<weapFieldType_t>(field.iFieldType))
-            {
-            case WFT_WEAPONTYPE:
-                FillFromEnumInt(std::string(field.szName), field.iOffset, szWeapTypeNames, std::extent_v<decltype(szWeapTypeNames)>);
-                break;
-            default:
-                assert(false);
-                break;
-            }
+
         }
 
     public:

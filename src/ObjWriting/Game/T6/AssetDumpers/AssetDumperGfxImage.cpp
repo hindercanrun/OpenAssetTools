@@ -113,7 +113,10 @@ void AssetDumperGfxImage::DumpAsset(AssetDumpingContext& context, XAssetInfo<Gfx
     const auto assetFile = context.OpenAssetFile(GetAssetFileName(*asset));
 
     if (!assetFile)
+    {
+        std::cerr << std::format("WARNING: failed to dump {}", asset->m_name);
         return;
+    }
 
     auto& stream = *assetFile;
     m_writer->DumpImage(stream, texture.get());
