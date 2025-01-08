@@ -75,7 +75,7 @@ namespace
         if (xChunkProcessorPtr)
             *xChunkProcessorPtr = xChunkProcessor.get();
 
-        // Decompress the chunks using zlib
+        // Decompress the chunks using zLib
         xChunkProcessor->AddChunkProcessor(std::make_unique<XChunkProcessorDeflate>());
 
         if (isEncrypted)
@@ -100,6 +100,7 @@ std::unique_ptr<ZoneWriter> ZoneWriterFactory::CreateWriter(Zone* zone) const
     auto writer = std::make_unique<ZoneWriter>();
 
     // TODO Support signed fastfiles
+    // -maybe also server fastfiles?
     bool isSecure = false;
     bool isEncrypted = true;
 
