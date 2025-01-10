@@ -33,7 +33,20 @@ void StringFileDumper::WriteHeader()
 {
     m_stream << "// Dumped from Fast File: \"" << m_zone->m_name << "\".\n";
     m_stream << "// In their original format the strings might have been separated in multiple files.\n";
-    m_stream << "VERSION             \"1\"\n";
+    m_stream << "//\n";
+    m_stream << "//\n";
+    m_stream << "// Note to translators:\n";
+    m_stream << "// If a sentence is the same in your language then please change it to \"#same\"\n";
+    m_stream << "//\n";
+    m_stream << "// eg:\n";
+    m_stream << "// LANG_ENGLISH  \"HALT\"\n";
+    m_stream << "// LANG_GERMAN   \"#same\"\n";
+    m_stream << "//\n";
+    m_stream << "// (This is so we can tell which strings have been signed-off as ok to be the same words for QA\n";
+    m_stream << "//  and because we do not store duplicate strings, which will then get exported again next time\n";
+    m_stream << "//  as being untranslated.)\n";
+    m_stream << "//\n";
+    m_stream << "VERSION             \"1\"\n"; // all strings seem to be "1"
     m_stream << "CONFIG              \"" << m_config_file << "\"\n";
     m_stream << "FILENOTES           \"" << m_notes << "\"\n";
 
@@ -79,5 +92,5 @@ void StringFileDumper::Finalize()
         WriteHeader();
     }
 
-    m_stream << "\nENDMARKER";
+    m_stream << "\nENDMARKER\n";
 }
